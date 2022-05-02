@@ -14,17 +14,19 @@ class ViajeroFrecuente:
     
     def muestra(self):
         return self.__numviajero+';'+self.__DNI+';'+self.__apellido+';'+self.__millasacum
-    def returnnumviajero(self,numviajero):
+    def returnnumviajero(self):
         return self.__numviajero
     def canttotalmillas(self):
-        millas=int(input('Ingrese cantidad de millas: '))
-        return millas
-    
-    def acumularmillas(self,millas):
-        self.__millasacum+=millas
+        return self.__millasacum
+    def acumularmillas(self,act):
+        self.__millasacum+=act
         return self.__millasacum
     
-    def canjearmillas(self,millasacum,millascanj):
+    def canjearmillas(self,millascanj):
         if millascanj<=self.__millasacum:
-            return self.__millasacum
+            self.__millasacum-=millascanj
         else: print('ERROR')
+    def __gt__(self,otroViajero): #Sobrecarga de operador mayor
+        if self.__millasacum>otroViajero.__millasacum:
+            return True
+        else: return False
