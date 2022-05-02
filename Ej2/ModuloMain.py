@@ -32,4 +32,13 @@ if __name__=='__main__':
         elif opcion==3:
             mcanj=int(input('Ingrese cantidad de millas a canjear: '))
             lista[numv-1].canjearmillas(mcanj)
-            print('Millas actuales: ',lista[numv-1].canttotalmillas())
+            print('Millas actuales: ',lista[numv-1].canttotalmillas()
+        otroViajero=ViajeroFrecuente('2','32435212','Alekas','perez',4000)
+    if otroViajero>lista[numv-1]:
+        print('El viajero 2 tiene mas millas que el viajero 1')
+    else:
+        print('El viajero 1 tiene mas millas que el viajero 2')
+    otroViajero+=300
+    print(otroViajero.canttotalmillas())
+    otroViajero-=100
+    print(otroViajero.canttotalmillas())
