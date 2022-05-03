@@ -26,14 +26,3 @@ class ViajeroFrecuente:
         if millascanj<=self.__millasacum:
             self.__millasacum-=millascanj
         else: print('ERROR')
-    def __gt__(self,otroViajero): #Sobrecarga de operador mayor
-        if self.__millasacum>otroViajero.__millasacum:
-            return True
-        else: return False
-    def __add__(self,milla):
-        if type(milla)==int:
-            return ViajeroFrecuente(self.__numviajero,self.__DNI,self.__nombre,self.__apellido,self.__millasacum+int(milla))
-    def __sub__(self,milla):
-        if type(milla)==int:
-            if self.__millasacum<=milla:
-                return ViajeroFrecuente(self.__numviajero,self.__DNI,self.__nombre,self.__apellido,self.__millasacum-int(milla))
